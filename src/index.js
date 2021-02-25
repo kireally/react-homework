@@ -1,12 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+import TextComponent from './components/TextComponent'
+import YesOrNoComponent from './components/YesOrNoComponent'
+import ChangeArrowsComponent from './components/ChangeArrowsComponent'
+import SquareComponent from './components/SquareComponent'
+import ItalicTextComponent from './components/ItalicTextComponent';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <div className='container'>
+      <TextComponent text='Regular text' fontSize={14} color='#000000'  />
+      <TextComponent text='Huge header' fontSize={24} color='#000000'  />
+      <TextComponent text='Danger notification' fontSize={14} color='#FF0000' />
+      <TextComponent text='Underlined text' fontSize={18} color='#000000' textDecoration />
+
+      <YesOrNoComponent />
+
+      <ChangeArrowsComponent />
+
+      <SquareComponent label='BIG text' cssClass='big-square' />
+      <SquareComponent label='Middle text' cssClass='middle-square' />
+      <SquareComponent label='little text' cssClass='little-square' />
+
+      <ItalicTextComponent />
+    </div>
   </React.StrictMode>,
   document.getElementById('root')
 );
