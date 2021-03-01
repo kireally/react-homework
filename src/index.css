@@ -11,3 +11,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.big-square {
+  width: 500px;
+  height: 500px;
+  font-size: 28px;
+  background-color: brown;
+}
+
+.middle-square {
+  width: 300px;
+  height: 300px;
+  font-size: 20px;
+  background-color: darkkhaki;
+}
+
+.little-square {
+  width: 150px;
+  height: 150px;
+  font-size: 14px;
+  background-color: darkturquoise;
+}
+
+.italic {
+  font-style: italic;
+}
