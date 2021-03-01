@@ -7,7 +7,7 @@ class ItalicTextComponent extends React.Component {
   
     render() {
       return (
-        <p className={ this.state.italic && 'italic' } 
+        <p className={ this.state.italic ? 'italic' : '' } 
            onClick = {() =>
             this.setState({italic : !this.state.italic})
            }>

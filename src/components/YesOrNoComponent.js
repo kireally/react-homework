@@ -11,12 +11,11 @@ class YesOrNoComponent extends React.Component {
     return (
       <p onClick={() => {
         this.setState({
-          xIsNext: !this.state.xIsNext,
-          currentValue: this.state.xIsNext ? 'X' : 'V'
+          xIsNext: !this.state.xIsNext
         })
       }
       }>
-        {this.state.currentValue}
+        {this.state.xIsNext ? 'X' : 'V'}
       </p> 
     )
   }
