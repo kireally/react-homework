@@ -1,0 +1,29 @@
+import React from 'react'
+import names from '../names.json'
+
+class ArrayModification extends React.Component {
+
+    state = {
+        people : ['Nick', 'John']
+    }
+
+    render() {
+        return (
+            <div>
+                <button onClick = {() => {
+                    const index = Math.floor(Math.random() * 13)
+                    const newPeople = [...this.state.people, names[index]]
+                    this.setState({people : newPeople})
+                    this.state.people.map((element,index) => {
+                        return <p key={index}>{element}</p>
+                    })
+                }
+                }>
+                    Add name
+                </button>
+            </div>
+        )
+    }
+}
+
+export default ArrayModification

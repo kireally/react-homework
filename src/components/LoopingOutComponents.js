@@ -8,9 +8,9 @@ class LoopingOutComponents extends React.Component {
     }
     render() {
         return (
-                this.data.map((element) => {
+                this.data.map((element, index) => {
                    return (
-                     <div className='card-container'>
+                     <div className='card-container' key={index}>
                          <h3>{element.name.first}</h3>
                          <h4>{element.name.last}</h4>
                      </div>  

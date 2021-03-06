@@ -5,31 +5,35 @@ class DropdownComponent extends React.Component {
         isOpen: false
     }
     
-    ingridients = ['pepperoni', 'anchouses', 'chesses', 'pizzas']
+    ingridients = [
+        {name: 'pepperoni', id: 0}, 
+        {name: 'anchouses', id: 1}, 
+        {name: 'chesses', id: 2 }, 
+        {name: 'pizzas', id: 3}
+    ]
 
 
     render() {
-        return  this.state.isOpen ? (
+        return (
             <div>
-                <button onClick = { () => {
-                    this.setState({isOpen : !this.state.isOpen})     
-                }
-                }>
-                    Close
+                <button onClick={() =>this.setState({isOpen: !this.state.isOpen})}>
+                    {this.state.isOpen ? 'Close' : 'Open'}
                 </button>
-                    <ul>
-                        {this.ingridients.map((item) => <li>
-                            {item}
-                        <Counter defaultNumber={0} />
-                        </li>)} 
-                    </ul>
-            </div>
-        ) : <button onClick = { () => {
-            this.setState({isOpen : !this.state.isOpen})     
-        }
-        }>
-            Open
-        </button>
+                { this.state.isOpen && (
+                    <div>
+                        {this.ingridients.map(item => {
+                            return (
+                                <div key={item.id}>
+                                    <p>{item.name}</p>
+                                    <Counter />
+                                </div>
+                            )
+                        })}         
+                    </div>
+                )
+                }
+            </div>    
+        )
     }
 }
 
