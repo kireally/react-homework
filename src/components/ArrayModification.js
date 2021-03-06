@@ -4,7 +4,7 @@ import names from '../names.json'
 class ArrayModification extends React.Component {
 
     state = {
-        people : ['Nick', 'John']
+        people : []
     }
 
     render() {
@@ -14,13 +14,16 @@ class ArrayModification extends React.Component {
                     const index = Math.floor(Math.random() * 13)
                     const newPeople = [...this.state.people, names[index]]
                     this.setState({people : newPeople})
-                    this.state.people.map((element,index) => {
-                        return <p key={index}>{element}</p>
-                    })
+                    
                 }
                 }>
                     Add name
                 </button>
+                {
+                this.state.people.map((element,index) => {
+                        return <p key={index}>{element}</p>
+                    })
+                }
             </div>
         )
     }
