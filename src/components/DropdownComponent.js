@@ -25,7 +25,7 @@ class DropdownComponent extends React.Component {
                             return (
                                 <div key={item.id}>
                                     <p>{item.name}</p>
-                                    <Counter />
+                                    <Counter defaultNumber={0}/>
                                 </div>
                             )
                         })}         
