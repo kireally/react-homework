@@ -7,7 +7,15 @@ import TextComponent from './components/TextComponent'
 import YesOrNoComponent from './components/YesOrNoComponent'
 import ChangeArrowsComponent from './components/ChangeArrowsComponent'
 import SquareComponent from './components/SquareComponent'
-import ItalicTextComponent from './components/ItalicTextComponent';
+import ItalicTextComponent from './components/ItalicTextComponent'
+import SignInComponent from './components/SignInComponent'
+import LoopingOutComponents from './components/LoopingOutComponents'
+import LoadComponent from './components/LoadComponent'
+import LoadPropsComponent from './components/LoadPropsComponent'
+import DropdownComponent from './components/DropdownComponent'
+import CountComponent from './components/CountComponent'
+import ArrayModification from './components/ArrayModification'
+import Animation from './components/Animation'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -26,6 +34,23 @@ ReactDOM.render(
       <SquareComponent label='little text' cssClass='little-square' />
 
       <ItalicTextComponent />
+
+      <SignInComponent />
+
+      <LoopingOutComponents />
+
+      <LoadComponent />
+
+      <LoadPropsComponent loading={true} />
+      <LoadPropsComponent loading={false} />
+
+      <DropdownComponent />
+
+      <CountComponent />
+
+      <ArrayModification />
+
+      <Animation />
     </div>
   </React.StrictMode>,
   document.getElementById('root')
