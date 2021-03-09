@@ -16,6 +16,8 @@ import DropdownComponent from './components/DropdownComponent'
 import CountComponent from './components/CountComponent'
 import ArrayModification from './components/ArrayModification'
 import Animation from './components/Animation'
+import SayHello from './components/SayHello'
+import InputField from './components/InputField'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -51,6 +53,10 @@ ReactDOM.render(
       <ArrayModification />
 
       <Animation />
+
+      <SayHello />
+
+      <InputField />
     </div>
   </React.StrictMode>,
   document.getElementById('root')
