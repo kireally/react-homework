@@ -22,7 +22,8 @@ import Animation from './components/Animation'
 import SayHello from './components/SayHello'
 import InputField from './components/InputField'
 import Counter from './components/Counter'
-import LoginPage from './components/LoginPage';
+import LoginPage from './components/LoginPage'
+import SignUp from './components/SignUp'
 
 
 class App extends React.Component {
@@ -82,6 +83,9 @@ class App extends React.Component {
             </li>
             <li>
               <Link to="/LoginPage">LoginPage</Link>
+            </li>
+            <li>
+              <Link to="/SignUp">SignUp</Link>
             </li>
           </ul>
         </nav>
@@ -178,6 +182,11 @@ class App extends React.Component {
           <Route path="/LoginPage">
             <div className='container'>
               <LoginPage />
+            </div>
+          </Route>
+          <Route path="/SignUp">
+            <div className='container'>
+              <SignUp />
             </div>
           </Route>
         </Switch>
