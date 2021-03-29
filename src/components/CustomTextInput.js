@@ -42,7 +42,7 @@ CustomTextInput.propTypes = {
 }
 
 CustomTextInput.defaultProps = {
-    padding: '1',
+    padding: 1,
     inputName: '',
     type: 'text',
     resetStyles: false,

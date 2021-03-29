@@ -25,7 +25,6 @@ import Counter from './components/Counter'
 import LoginPage from './components/LoginPage'
 import SignUp from './components/SignUp'
 import Tap from './components/Tap'
-// import CheckList from './components/Checklist/CheckList'
 import CustomTextInput from './components/CustomTextInput';
 import Quiz from './components/Quiz/Quiz'
 
@@ -94,9 +93,7 @@ class App extends React.Component {
             <li>
               <Link to="/Tap">Tap</Link>
             </li>
-            {/* <li>
-              <Link to="/Checklist">CheckList</Link>
-            </li> */}
+            
             <li>
               <Link to="/CustomTextInput">CustomTextInput</Link>
             </li>
@@ -212,11 +209,7 @@ class App extends React.Component {
               <Tap label='Кнопка с параметром' clickFunction />
             </div>
           </Route>
-          {/* <Route path="/Checklist">
-            <div className='container'>
-              <CheckList title='First Checklist'/>
-            </div>
-          </Route> */}
+          
           <Route path="/CustomTextInput">
             <div className='container'>
               <CustomTextInput
