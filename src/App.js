@@ -25,9 +25,9 @@ import Counter from './components/Counter'
 import LoginPage from './components/LoginPage'
 import SignUp from './components/SignUp'
 import Tap from './components/Tap'
-import CheckList from './components/Checklist/CheckList'
+// import CheckList from './components/Checklist/CheckList'
 import CustomTextInput from './components/CustomTextInput';
-
+import Quiz from './components/Quiz/Quiz'
 
 
 class App extends React.Component {
@@ -94,11 +94,14 @@ class App extends React.Component {
             <li>
               <Link to="/Tap">Tap</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/Checklist">CheckList</Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/CustomTextInput">CustomTextInput</Link>
+            </li>
+            <li>
+              <Link to="/Quiz">Quiz</Link>
             </li>
           </ul>
         </nav>
@@ -209,15 +212,15 @@ class App extends React.Component {
               <Tap label='Кнопка с параметром' clickFunction />
             </div>
           </Route>
-          <Route path="/Checklist">
+          {/* <Route path="/Checklist">
             <div className='container'>
               <CheckList title='First Checklist'/>
             </div>
-          </Route>
+          </Route> */}
           <Route path="/CustomTextInput">
             <div className='container'>
               <CustomTextInput
-                padding={1}
+                // padding={1}
                 inputName ='input name'
                 type='text'
                 resetStyles
@@ -225,6 +228,11 @@ class App extends React.Component {
                 placeholder='enter smth'
                 value='value'
               />
+            </div>
+          </Route>
+          <Route path="/Quiz">
+            <div className='container'>
+              <Quiz/>
             </div>
           </Route>
         </Switch>
