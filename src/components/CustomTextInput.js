@@ -15,14 +15,12 @@ const CustomTextInput = ({padding, inputName, type, placeholder, value, resetSty
                 type={type}
                 placeholder={placeholder}
                 value={value}
-                onChange={onChange()}
+                onChange={onChange}
                 style={
-                    resetStyles && (
-                        {
+                    resetStyles && {
                             background: '#eee',
                             border: 'dashed #FF0000 2px'
-                        }
-                    )
+                    }
                 }
             >
             

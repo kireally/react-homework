@@ -29,9 +29,9 @@ const LoginPage = () => {
         setPassword('')
         } catch(err) {
             console.log(err.response);
-            setError(err.response.data)
+            setError(err.response.data);
         }
-    })
+    }, [])
 
 
     useEffect(() => {
