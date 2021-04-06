@@ -9,8 +9,8 @@ class ChangeArrowsComponent extends React.Component {
     
     render() {
       return (
-        <img className='img' src={this.Urls[this.state.currentPosition % 3]} onClick={() => {
-          this.setState({currentPosition : ++this.state.currentPosition})
+        <img className='img' alt='img' src={this.Urls[this.state.currentPosition % 3]} onClick={() => {
+          this.setState({currentPosition : this.state.currentPosition + 1})
         }
       }/>
       )

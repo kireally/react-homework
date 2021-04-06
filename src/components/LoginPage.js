@@ -1,46 +1,67 @@
 import axios from 'axios'
-import React from 'react'
+import { React, useEffect, useState,useCallback } from 'react'
 
-class LoginPage extends React.Component {
+const LoginPage = () => {
+    const [phone, setPhone] = useState('')
+    const [password, setPassword] = useState('')
+    const [user, setUser] = useState(null)
+    const [error, setError] = useState('')
 
-    state = {
-        phone: '',
-        password: ''
-    }
+    const onChangeCredentials = useCallback(((event, fieldName) => {
+        if(fieldName === 'phone') {
+            setPhone(event.target.value)
+            setError('')
+        }
+        if(fieldName === 'password') {
+            setPassword(event.target.value)
+            setError('')
+        }
+    }),[setPhone, setPassword, setError])
 
-    onLogin = async () => {
-        const response = await axios.post('http://localhost:3001/auth/sign-in', {
-            phone: this.state.phone,
-            password: this.state.password
-
+    const login = useCallback(async () => {
+        try{
+            const response = await axios.post('http://localhost:3001/auth/sign-in', {
+            phone,
+            password
         })
-        console.log(response.data)
-    }
+        setUser(response.data)
+        setPhone('')
+        setPassword('')
+        } catch(err) {
+            console.log(err.response);
+            setError(err.response.data);
+        }
+    }, [])
 
-    onChangeCredentials = (event, fieldName) => {
-        this.setState({[fieldName]: event.target.value})
-    }
 
-    render() {
-        return (
-            <div className='App'>
-                <input
-                    type='text'
-                    placeholder='phone number'
-                    onChange={(event) => this.onChangeCredentials(event, 'phone')}
-                    value={this.state.phone}
-                />
-                <input
-                    type='text'
-                    placeholder='password'
-                    onChange={(event) => this.onChangeCredentials(event, 'password')}
-                    value={this.state.password}
-                />
-                <button onClick={this.onLogin}>Sign in</button>                
+    useEffect(() => {
+        if(password.length === 3 && phone.length === 12) {
+            login()
+        }
+    }, [password, login])
+
+    return (
+        <div className='App'>
+            <input
+                type='text'
+                placeholder='phone number'
+                onChange={(event) => onChangeCredentials(event, 'phone')}
+                value={phone}
+            />
+            <input
+                type='text'
+                placeholder='password'
+                onChange={(event) => onChangeCredentials(event, 'password')}
+                value={password}
+            />
+            <div>
+                {user && (
+                    <span>{user.name.first} {user.name.last}</span>
+                )}
             </div>
-        )
-    }
-
+            <div>{error}</div>                
+        </div>
+    )
 }
 
 

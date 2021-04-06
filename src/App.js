@@ -24,6 +24,9 @@ import InputField from './components/InputField'
 import Counter from './components/Counter'
 import LoginPage from './components/LoginPage'
 import SignUp from './components/SignUp'
+import Tap from './components/Tap'
+import CustomTextInput from './components/CustomTextInput';
+import Quiz from './components/Quiz/Quiz'
 
 
 class App extends React.Component {
@@ -86,6 +89,16 @@ class App extends React.Component {
             </li>
             <li>
               <Link to="/SignUp">SignUp</Link>
+            </li>
+            <li>
+              <Link to="/Tap">Tap</Link>
+            </li>
+            
+            <li>
+              <Link to="/CustomTextInput">CustomTextInput</Link>
+            </li>
+            <li>
+              <Link to="/Quiz">Quiz</Link>
             </li>
           </ul>
         </nav>
@@ -187,6 +200,32 @@ class App extends React.Component {
           <Route path="/SignUp">
             <div className='container'>
               <SignUp />
+            </div>
+          </Route>
+          <Route path="/Tap">
+            <div className='container'>
+              <Tap label='Кнопка 1' clickFunction />
+              <Tap label='Кнопка вторая' clickFunction />
+              <Tap label='Кнопка с параметром' clickFunction />
+            </div>
+          </Route>
+          
+          <Route path="/CustomTextInput">
+            <div className='container'>
+              <CustomTextInput
+                // padding={1}
+                inputName ='input name'
+                type='text'
+                resetStyles
+                onChange={() => console.log('onChange props works')}
+                placeholder='enter smth'
+                value='value'
+              />
+            </div>
+          </Route>
+          <Route path="/Quiz">
+            <div className='container'>
+              <Quiz/>
             </div>
           </Route>
         </Switch>

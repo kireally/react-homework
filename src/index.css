@@ -74,3 +74,32 @@ code {
       margin-bottom: 20px;
       border: 1px solid #000000;
     }
+
+    .reset-styles {
+      background-color: transparent;
+      border: none;
+    }
+
+    /*Quiz===========================
+    =================================*/
+
+    .quiz {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .question {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 70%;
+      margin-bottom: 30px;
+      border: dashed #eee 4px;
+    }
+
+    .answer {
+      display: flex;
+      align-items: center;
+    }
