@@ -1,18 +1,15 @@
 import React, { useState } from 'react'
 
-const Answer = ({answer, name}) => {
-
-    const [checkedAnswer, setCheckedAnswer] = useState('')
+const Answer = ({answer, name, onPress}) => {
 
     const onChecked = (event) => {
-        setCheckedAnswer(event.target.labels[0].innerText)
-        console.log(event.target.labels[0].innerText)
+        onPress(event.target.labels[0].innerText)
     }
 
     return (
         <div className='answer'>
             <label>
-                <input onClick={onChecked} type="radio" name={`${name}`} checkedAnswer={checkedAnswer} />
+                <input onChange={onChecked} type="radio" name={`${name}`} />
                 {answer}
             </label>
         </div>
